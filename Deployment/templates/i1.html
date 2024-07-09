@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Audio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('C:/Users/rahul/OneDrive/Desktop/sentiment/background2.jpg'); /* Specify the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Add transparency to the form background */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body style="background-image: url(https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?cs=srgb&dl=pexels-yan-krukau-8867434.jpg&fm=jpg);">
+    <h1 style="background-color: transparent; color: black;">Sentiment Analysis</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="audio">Select an audio file:</label>
+        <input type="file" name="audio" accept=".wav, .mp3"><br>
+        <input type="submit" value="Upload">
+        <div>{{prediction}}</div>
+    </form>
+</body>
+</html>
